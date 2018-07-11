@@ -1,0 +1,264 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>测试</title>
+    <link rel="stylesheet" href="css/swiper.min.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/iconfont.css" />
+    <script src="js/swiper.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/echarts.js"></script>
+    <style>
+        html{font-size: 11px;}
+        @media screen and (min-width: 330px) {
+            html{font-size: 13px;}
+        }
+        html,body{width: 100%; height: 100%;}
+        body {
+            /*background: #eee;*/
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color:#fff;
+            margin: 0;
+            padding: 0;
+        }
+        .swiper-wrapper{
+            transition-delay:.3s;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        .swiper-slide .text_top{
+            transform:translateY(-200px);
+            opacity:0;
+            transition:all 1s;
+        }
+        .swiper-slide .text_bottom{
+            transform:translateY(200px);
+            opacity:0;
+            transition:all 1s ease-out 1.6s;;
+        }
+        .swiper-slide .text_left{
+            transform:translateX(-200px);
+            opacity:0;
+            transition:all 1s ease-out 1s;;
+        }
+        .swiper-slide .text_right{
+            transform:translateX(200px);
+            opacity:0;
+            transition:all 1s ease-out 1s;;
+        }
+
+        .ani-slide .text_left,.ani-slide .text_right,.ani-slide .text_top,.ani-slide .text_bottom{
+            transform:translate(0,0) ;
+            opacity:1;
+        }
+        /*公共样式*/
+        .div_up{ position: fixed; bottom: 2%; width: 40px;left: 50%; margin-left: -20px; opacity: 0.6; z-index: 99;animation:div_up 2s infinite;}
+        @keyframes div_up
+        { 0% {bottom: 2%} 50% {bottom: 4%}  100% {bottom: 2%} }
+        div{position: absolute;}
+        img{width: 100%;}
+        .img_bg{ position: absolute; width: 100%; height: 100%; left: 0%;top: 0;}
+        .shade{ width: 100%; height: 100%; left: 0%; top: 0%;background: #000; opacity: 0.2;}
+        .text_title{ font-size: 2rem; top: 8%; left: 0%; width: 100%; text-align: center;}
+        .content{top: 20%; width: 70%;left: 15%;}
+        .content p{background: rgba(74, 93, 99, 0.78); text-align: left; font-size: 1.4rem; line-height: 2.4rem; text-indent: 3.2rem; margin: 0 0 2rem 0; border: 2px solid #fff; padding: 0.6rem;}
+        .text_center p{ text-indent: 0; text-align: center;}
+        .swiper-container .c3{ animation: zhuan 2s infinite linear; }
+        @keyframes zhuan
+        {
+            0% {transform: rotate(0deg);}
+            100% {transform: rotate(360deg);}
+        }
+        /*合作样式*/
+        .swiper-slide .hz p{ display: flex; justify-content: space-between; border: none; text-indent: 0; margin: 0 0 3% 0; background: none;}
+        .swiper-slide .hz p span{ width: 44%;}
+
+        /*功能样式*/
+        .swiper-slide .gn p{border: none; display: flex; justify-content: space-between; background: none;}
+        .swiper-slide .gn span{border: none;  text-indent: 0;}
+        .swiper-slide .gn p b{ display: block; margin-top: 1.4rem; text-align: center;width: 100%;font-size: 1.6rem;}
+        .swiper-slide .gn p i{font-size: 4rem; padding: 1rem; text-align: center; line-height: 4rem; border: 4px solid #fff; border-radius: 6rem; text-indent: 0; }
+
+        .slide9{ width: 80%; left: 10%; bottom: 6%; display: flex; justify-content: space-around; }
+        .slide9 p{ width: 32%; }
+        .slide9 p b{ width: 100%; font-size: 1.4rem; font-weight: 400;}
+        .onload{ position: fixed; background: #fff;left: 0; top: 0; width: 100%; height: 100%; z-index: 100;}
+        .onload p{ width: 6rem; top: 50%; margin-top: -3rem; left: 50%; margin-left: -3rem; position: absolute;}
+        /*产品服务*/
+        .fuwu p{ margin-bottom: 1.4rem;}
+    </style>
+</head>
+<body>
+<div class="swiper-container swiper-container-v">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" style=" background: #000;">
+            <img class="img_bg" src="img/index/1.jpg" style="width: 100%; height: auto;" />
+            <div class="text_title text_top">测试11111</div>
+            <div class="content text_left">
+                <!--<p>测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试</p>-->
+                <div id="main" class="" style="width:60%;height:500px;margin-left:20%;"></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <img class="img_bg" src="img/index/2.jpg"/>
+            <div class="text_title text_top">测试22222</div>
+            <div class="content text_right">
+                <p>测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <img class="img_bg" src="img/index/3.jpg"/>
+            <div class="text_title text_top">测试33333</div>
+            <div class="content text_left">
+                <p>测试测试测试测试测试测试测试测试测试测试测试</p>
+                <p>测试测试测试测试测试测试测试测试</p>
+                <p>测试测试测试测试测试测试测试测试</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <img class="img_bg" src="img/index/4.jpg"/>
+            <div class="text_title text_top">测试测试测试测试44444</div>
+            <div class="content text_right">
+                <p>测试测试测试测试测试测试测试</p>
+                <p>测试测试测试测试</p>
+                <p>测试测试测试</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <img class="img_bg" src="img/index/5.jpg"/>
+            <div class="text_title text_top">测试测试测试测55555</div>
+            <div class="content text_left fuwu">
+                <p>测试测试测试测试测试测试</p>
+                <p>测试测试测试测试测试</p>
+            </div>
+        </div>
+    </div>
+    <div class="div_up"><img src="img/index/up.png"/></div>
+    <div class="swiper-pagination swiper-pagination-v"></div>
+</div>
+</body>
+<script>
+    var myChart = echarts.init(document.getElementById('main'));
+    var xAxisData = [];
+    var data1 = [];
+    var data2 = [];
+    for (var i = 0; i < 100; i++) {
+        xAxisData.push('类目' + i);
+        data1.push((Math.sin(i / 5) * (i / 5 -10) + i / 6) * 5);
+        data2.push((Math.cos(i / 5) * (i / 5 -10) + i / 6) * 5);
+    }
+    option = {
+        title: {
+            text: '柱状图',
+            textStyle:{
+                color:'#fff',
+            }
+        },
+        tooltip: {},
+        xAxis: {
+            data: xAxisData,
+            silent: false,
+            splitLine: {
+                show: false
+            }
+        },
+        yAxis: {
+        },
+        series: [{
+            name: 'bar',
+            type: 'bar',
+            data: data1,
+            itemStyle: {
+                color:'yellow'
+            },
+            animationDelay: function (idx) {
+                return idx * 10;
+            }
+
+        }, {
+            name: 'bar2',
+            type: 'bar',
+            data: data2,
+            itemStyle: {
+                color:'#fff'
+            },
+            animationDelay: function (idx) {
+                return idx * 10 + 100;
+            }
+        }],
+        animationEasing: 'elasticOut',
+        animationDelayUpdate: function (idx) {
+            return idx * 5;
+        }
+    };
+    // 为echarts对象加载数据
+    myChart.setOption(option);
+
+
+
+
+
+
+
+
+    $(function(){
+        $('.img_bg').each(function (i,v) {//索引，元素
+            //插入一层蒙版
+            $(this).after('<div class="shade"></div>');//方法在被选元素后插入指定的内容。
+        })
+    });
+    var swiperV = new Swiper('.swiper-container-v', {
+        initialSlide :0,//设定初始化时slide的索引。
+        direction : 'vertical',//Slides的滑动方向，可设置水平(horizontal)或垂直(vertical)。
+        followFinger : false,//值为false时，仅当你释放slide时才会滑动，当你用手指按住滑块它不会动。
+        speed:600,//slide滑块自动滑动时的持续时间，即slide开始滑动到滑动结束的时间（单位ms）
+        mousewheelControl : true,//开启鼠标滚轮控制Swiper切换。可设置鼠标选项，或true使用默认值。
+        on:{
+            init:function(swiper){ //回调函数，初始化后执行
+                console.log(swiper);
+                slide=this.slides.eq(0);
+                slide.addClass('ani-slide');
+            },
+            transitionStart: function(){  //过渡开始时触发
+                for(i=0;i<this.slides.length;i++){
+                    slide=this.slides.eq(i);
+                    slide.removeClass('ani-slide');
+                }
+            },
+            transitionEnd: function(){ //过渡结束时触发,人为中断过渡不会触发这个函数
+                slide=this.slides.eq(this.activeIndex);
+                slide.addClass('ani-slide');
+                //最后一页时向下符号消失
+                (this.activeIndex==4)? $('.div_up').hide() :  $('.div_up').show();
+            }
+        }
+    });
+    window.onload = function(){
+        $('.onload').fadeOut(500);
+    }
+</script>
+</html>

@@ -1,0 +1,18 @@
+
+@font-face {font-family: "iconfont_load";
+  src: url('../font/loading/iconfont.eot?t=1517551996805'); /* IE9*/
+  src: url('../font/loading/iconfont.eot?t=1517551996805#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../font/loading/iconfont.ttf?t=1517551996805') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../font/loading/iconfont.svg?t=1517551996805#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont_load {
+  font-family:"iconfont_load" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-jiazaizhong:before { content: "\e6ac"; }
+
